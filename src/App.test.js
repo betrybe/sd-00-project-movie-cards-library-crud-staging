@@ -91,7 +91,7 @@ const renderPath = (path) => {
   return { ...resources }
 };
 
-describe('1 - Renderize `BrowserRouter` no componente `App` usando rotas', () => {
+describe.only('1 - Renderize `BrowserRouter` no componente `App` usando rotas', () => {
   test('a rota "/" deve renderizar MovieList', async () => {
     const { unmount, getByTestId } = renderPath('/');
     await waitFor(() => movieAPI.getMovies());
@@ -126,7 +126,7 @@ describe('1 - Renderize `BrowserRouter` no componente `App` usando rotas', () =>
   })
 });
 
-describe('2 - Faça uma requisição para buscar e mostrar a lista de filmes quando `MovieList` for montado', () => {
+describe.only('2 - Faça uma requisição para buscar e mostrar a lista de filmes quando `MovieList` for montado', () => {
   test('deverá exibir o texto "Carregando..." enquanto estiver fazendo a requisição', async () => {
     const { container, unmount, getByText } = renderPath('/');
     expect(getByText('Carregando...'));
@@ -164,12 +164,12 @@ describe('3 - Insira um link para a página de detalhes de um filme dentro de `M
 
 describe('4 - Faça uma requisição para buscar o filme que deverá ser renderizado dentro de `Movie Details`', () => {
 
-  it('deverá exibir o texto "Carregando..." enquanto estiver fazendo a requisição', async () => {
-    for (const movie of readMovies()) {
+  it('deverá exibir o texto "Carregando..." enquanto estiver fazendo a requisição', () => {
+    readMovies().forEach(async (movie) => {
       await cleanup();
       const { getByText } = renderPath('/movies/' + movie.id);
       expect(getByText('Carregando...'));
-    }
+    });
   });
 
   it('deverá exibir o título, o subtítulo, a sinopse, a imagem e o gênero do filme', async () => {
