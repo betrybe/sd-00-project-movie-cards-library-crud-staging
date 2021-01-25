@@ -100,9 +100,9 @@ Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
 ## Antes de começar a desenvolver
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-project-movie-card-library-crud.git`.
+  * `git clone git@github.com:tryber/sd-00-project-movie-cards-library-crud-staging.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-project-movie-card-library-crud`
+    * `cd sd-00-project-movie-cards-library-crud-staging`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -152,13 +152,13 @@ export default App;
   * Usando o exemplo anterior: `git push -u origin joaozinho-project-movie-card-library-crud`
 
 7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-movie-card-library-crud/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-00-project-movie-cards-library-crud-staging/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-movie-card-library-crud/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-00-project-movie-cards-library-crud-staging/pulls) e confira que o seu _Pull Request_ está criado
 
 
 ## Durante o desenvolvimento
@@ -193,7 +193,7 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
@@ -348,6 +348,6 @@ Ao clicar neste link, faça uma requisição utilizando a função `deleteMovie`
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://bit.ly/2OfLJPn)
 
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
