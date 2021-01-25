@@ -91,7 +91,7 @@ const renderPath = (path) => {
   return { ...resources }
 };
 
-describe('1 - Renderize `BrowserRouter` no componente `App` usando rotas', () => {
+describe('1 - Rotas: O componente App deve renderizar BrowserRouter', () => {
   test('a rota "/" deve renderizar MovieList', async () => {
     const { unmount, getByTestId } = renderPath('/');
     await waitFor(() => movieAPI.getMovies());
@@ -126,7 +126,7 @@ describe('1 - Renderize `BrowserRouter` no componente `App` usando rotas', () =>
   })
 });
 
-describe('2 - Faça uma requisição para buscar e mostrar a lista de filmes quando `MovieList` for montado', () => {
+describe('2 - Movie list: Ao ser montado, MovieList deve fazer uma requisição para buscar a lista de filmes a ser renderizada', () => {
   test('deverá exibir o texto "Carregando..." enquanto estiver fazendo a requisição', async () => {
     const { container, unmount, getByText } = renderPath('/');
     expect(getByText('Carregando...'));
@@ -141,7 +141,7 @@ describe('2 - Faça uma requisição para buscar e mostrar a lista de filmes qua
   })
 });
 
-describe('3 - Insira um link para a página de detalhes de um filme dentro de `MovieCard`', () => {
+describe('3 - MovieCard: deve possuir um link para a página de detalhes de um filme', () => {
   test('deve exibir pelo menos o título e a sinopse de seu respectivo filme', async () => {
     const { unmount, getAllByText } = renderPath('/');
     await waitFor(() => movieAPI.getMovies());
@@ -160,16 +160,16 @@ describe('3 - Insira um link para a página de detalhes de um filme dentro de `M
     })
     unmount();
   })
-});
+})
 
-describe('4 - Faça uma requisição para buscar o filme que deverá ser renderizado dentro de `Movie Details`', () => {
+describe('4 - MovieDetails: deve fazer uma requisição para buscar o filme que deverá ser renderizado', () => {
 
-  it('deverá exibir o texto "Carregando..." enquanto estiver fazendo a requisição', async () => {
-    for (const movie of readMovies()) {
+  it('deverá exibir o texto "Carregando..." enquanto estiver fazendo a requisição', () => {
+    readMovies().forEach(async (movie) => {
       await cleanup();
       const { getByText } = renderPath('/movies/' + movie.id);
       expect(getByText('Carregando...'));
-    }
+    });
   });
 
   it('deverá exibir o título, o subtítulo, a sinopse, a imagem e o gênero do filme', async () => {
@@ -209,7 +209,7 @@ describe('4 - Faça uma requisição para buscar o filme que deverá ser renderi
   });
 });
 
-describe('5 - Realize uma requisição para buscar o filme que será editado em `EditMovie`', () => {
+describe('5 - EditMovie: deve realizar uma requisição para buscar o filme que será editado', () => {
 
   it('deverá exibir o texto "Carregando..." enquanto estiver fazendo a requisição', async () => {
     for (const movie of readMovies()) {
@@ -272,9 +272,9 @@ describe('5 - Realize uma requisição para buscar o filme que será editado em 
 
   });
 
-});
+})
 
-describe('6 - Insira um link na página inicial para `NewMovie` para criar novos cartões', () => {
+describe('6 - NewMovie: Na página inicial, deve haver um link para criar novos cartões.', () => {
   it('a página inicial deverá conter um link "ADICIONAR CARTÃO". Esse link deve redirecionar para a página de criação de filmes', async () => {
     const { unmount } = renderPath('/');
     await waitFor(() => movieAPI.getMovies());
@@ -313,9 +313,9 @@ describe('6 - Insira um link na página inicial para `NewMovie` para criar novos
     expect(screen.getAllByTestId('movie-card').length).toBe(6);
 
   })
-});
+})
 
-describe('7 - Adicione um link para deletar um cartão em `MovieDetails`', () => {
+describe('Bônus: Adicione um link para deletar um cartão em MovieDetails', () => {
   it('"MovieDetails" deverá conter um botão com o texto "DELETAR"', async () => {
     for (const movie of readMovies()) {
       const { container, unmount, findByText } = renderPath('/movies/' + movie.id);
@@ -340,4 +340,4 @@ describe('7 - Adicione um link para deletar um cartão em `MovieDetails`', () =>
     expect(screen.getAllByTestId('movie-card').length).toBe(4);
     expect(screen.queryByText(deletedMovie.title)).toBeNull();
   })
-});
+})
