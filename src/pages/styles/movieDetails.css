@@ -1,0 +1,48 @@
+.movie-container {
+  display: flex;
+  padding: 12px;
+}
+
+.movie-container .movie-details {
+  align-items: stretch;
+  border: 1px solid thistle;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.movie-container .movie-details img {
+  flex: 1 1 350px;
+  width: 100%;
+}
+
+.movie-container .movie-details .info {
+  display: flex;
+  flex: 1 1 350px;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 12px;
+}
+
+.movie-container .movie-details .info p {
+  font-size: 90%;
+  padding-top: 20px;
+}
+
+.movie-container .movie-details .info .links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 0 12px;
+}
+
+.info .links a {
+  color: rgb(98, 40, 98);
+  font-size: 80%;
+  font-weight: 700;
+}
+
+.info .links a:hover {
+  color: rgb(46, 19, 46);
+}

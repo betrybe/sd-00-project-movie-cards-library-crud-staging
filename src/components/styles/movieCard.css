@@ -1,0 +1,77 @@
+.movie-card {
+  border: 1px solid thistle;
+  border-radius: 4px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-card img {
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+}
+
+.movie-card .card-content {
+  background-color: rgb(235, 231, 231);
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  padding: 8px;
+  position: relative;
+}
+
+.movie-card .card-content p {
+  font-size: 14px;
+  line-height: 16px;
+  text-align: justify;
+}
+
+.movie-card .card-content span {
+  color: grey;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.movie-card .card-content .fan {
+  align-items: center;
+  bottom: 10px;
+  color: rgb(187, 161, 14);
+  display: flex;
+  left: 50%;
+  margin-top: 16px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.movie-card .card-content .heart {
+  color: rgb(187, 161, 14);
+  margin-right: 8px;
+}
+
+.movie-card .card-more-info {
+  align-items: center;
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.movie-card .card-more-info a {
+  color: rgb(98, 40, 98);
+  font-size: 80%;
+  font-weight: 700;
+}
+
+.movie-card .card-more-info a:hover {
+  color: rgb(46, 19, 46);
+}
+
+.movie-card .card-more-info .rating {
+  color: rgb(187, 161, 14);
+}
+
+.movie-card .card-more-info .rating .star {
+  margin-right: 5px;
+}
